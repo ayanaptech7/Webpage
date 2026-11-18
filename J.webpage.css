@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+.page-content {
+    padding: 0 40px;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 40px;
+    position: relative;
+}
+.menubar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 3px;
+}
+.menubar span {
+    width: 30px;
+    height: 2px;
+    margin: 4px;
+    background-color: #333;
+    display: block;
+    margin-bottom: 3px;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin-top: 3px;
+    color: #333;
+    margin-top: 4px;
+}
+.brand-logo {
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.bag img {
+    width: 32px;
+    height: 34px;
+    object-fit: contain;
+}
+.bag-text {
+    font-size: 14.8px;
+    color: #333;
+    font-weight: bold 5px;
+    margin-top: 5px;
+}
+#main {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: baseline;
+    margin-top: 40px;
+    margin-left: 35px;
+    margin-bottom: 45px;
+}
+#main h1, #main h2, #main h6 {
+    margin: 0;
+}
+#main h1 {
+    font-size: 28px;
+    font-weight: 100;
+}
+#main h2 {
+    font-size: 40px;
+    font-style: italic;
+}
+#main h6 {
+    font-size: 20px;
+}
+.link {
+    display: flex;
+    column-gap: 20px;
+    font-size: 30px;
+    row-gap: 10px;
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+.link li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.link li:first-child a{
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+}
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 24px;
+}
+.filter img{
+    height: 16px;
+    width: 16px;
+}
+.filter .text-content p{
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #000;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px 20px;
+    padding: 20px 35px;
+    margin-top: 20px;
+}
+.product-card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.image-container {
+    position:relative;
+    background-color: #f9f9f9;
+    width: 100%;
+    overflow: hidden;
+}
+.product-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: opacity 0.5 ease-in-out, transform 0.5s ease-in-out;
+}
+.product-card:hover .product-img {
+    transform: scale(1.03);
+}
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    z-index: 2;
+}
+.new-in {
+    background-color: #fff;
+    color: #000;
+    border: none;
+}
+.sold-out{
+    background-color: lightslategray;
+    font-weight: 400;
+    height: 20px;
+    text-align: center;
+    width: 76px;
+    color: #fff;
+}
+.add-to-bag {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    padding: 12px 0;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: bottom 0.3s ease;
+}
+.image-container:hover .add-to-bag {
+    bottom: 0;
+}
+.add-to-bag:hover {
+    background-color: #000;
+    color: #fff;
+}
+.add-to-bag.disabled {
+    background-color: #f1f1f1;
+    color: #999;
+    cursor: not-allowed;
+}
+.product-info {
+    padding: 15px 0 5px 0;
+    text-align: left;
+}
+.product-title {
+    font-size: 13px;
+    font-weight: normal;
+    color: #000;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+.product-price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.product-card:hover .primary-img {
+    opacity: 0;
+}
+.product-card:hover .hover-img {
+    opacity: 1;
+    transform: scale(1.02);
+}
+.product-card:hover .hover-img {
+    opacity: 1;
+}
+/* --- J. WEBSITE FOOTER STYLES --- */
+
+.site-footer {
+    background-color: #111111; /* Dark charcoal black background */
+    color: #ffffff;
+    padding: 60px 40px 20px 40px;
+    margin-top: 60px; /* Products grid se thoda nichay gap dene ke liye */
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+.footer-column h4 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+.footer-column ul li a {
+    color: #cccccc; /* Slightly faded white for links */
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+.footer-column ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.newsletter p {
+    font-size: 13px;
+    color: #bbbbbb;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.newsletter-form input {
+    padding: 12px;
+    background-color: #222222;
+    border: 1px solid #444444;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+}
+.newsletter-form input::placeholder {
+    color: #777777;
+}
+.newsletter-form button {
+    padding: 12px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.newsletter-form button:hover {
+    background-color: #cccccc;
+}
+.footer-bottom {
+    border-top: 1px solid #222222;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+}
+.footer-bottom p {
+    font-size: 12px;
+    color: #777777;
+}
