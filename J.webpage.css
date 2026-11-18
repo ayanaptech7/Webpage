@@ -37,11 +37,10 @@ body{
 
 h6 {
     font-size: 14px;
-    font-weight: 100;
+    font-weight: normal;
     letter-spacing: 1px;
     margin-top: 3px;
     color: #333;
-    margin-top: 4px;
 }
 .brand-logo {
     height: 70px;
@@ -63,7 +62,7 @@ h6 {
 .bag-text {
     font-size: 14.8px;
     color: #333;
-    font-weight: bold 5px;
+    font-weight: bold;
     margin-top: 5px;
 }
 #main {
@@ -92,7 +91,7 @@ h6 {
 .link {
     display: flex;
     column-gap: 20px;
-    font-size: 30px;
+    font-size: 15px;
     row-gap: 10px;
     list-style-type: none;
     padding-left: 20px;
@@ -143,6 +142,7 @@ h6 {
     cursor: pointer;
 }
 .image-container {
+    height: 100%;
     position:relative;
     background-color: #f9f9f9;
     width: 100%;
@@ -153,7 +153,7 @@ h6 {
     height: auto;
     display: block;
     object-fit: cover;
-    transition: opacity 0.5 ease-in-out, transform 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 .product-card:hover .product-img {
     transform: scale(1.03);
@@ -176,9 +176,7 @@ h6 {
 .sold-out{
     background-color: lightslategray;
     font-weight: 400;
-    height: 20px;
     text-align: center;
-    width: 76px;
     color: #fff;
 }
 .add-to-bag {
@@ -239,9 +237,7 @@ h6 {
     opacity: 1;
     transform: scale(1.02);
 }
-.product-card:hover .hover-img {
-    opacity: 1;
-}
+
 /* --- J. WEBSITE FOOTER STYLES --- */
 
 .site-footer {
